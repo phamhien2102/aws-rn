@@ -1,4 +1,6 @@
 export enum RouteName {
-    HOME = 'HOME',
-    PROFILE = 'PROFILE',
+    CIRCLE = 'CIRCLE',
+    SQUARE = 'SQUARE',
+    TRIANGLE = 'TRIANGLE',
+    ALL_SHAPES = 'ALL_SHAPES',
 }
