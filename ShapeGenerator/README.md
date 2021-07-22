@@ -1,3 +1,6 @@
+# Demo
+[![Watch the video](src/assets/demo/DemoPhoto.png)](src/assets/demo/Demo.mp4)
+
 # shape-generator.
 - [x] A user should be able to spawn an infinite number of squares or circles filled with random colours or images.
 - [x] Application consists of 4 screens using a tab bar. The tabs are as follows:
