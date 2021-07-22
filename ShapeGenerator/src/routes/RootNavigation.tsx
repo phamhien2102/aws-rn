@@ -8,8 +8,10 @@ import IcTriangle from '../assets/icons/triangle.svg';
 import IcRandom from '../assets/icons/help-circle.svg';
 
 import { RouteName } from './RouteName';
-import Circle from '../screens/circle';
-import Square from '../screens/square';
+import AllShapesScreen from '../screens/all-shapes-screen';
+import CircleScreen from '../screens/circle-screen';
+import SquareScreen from '../screens/square-screen';
+import TriangleScreen from '../screens/triangle-screen';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,19 +30,19 @@ const renderTabBarIcon = (routeName: string, color: string) => {
     return icon;
 };
 
-const renderTabBarLabel = (routeName: string, color: string) => {
-    let label;
-    if (routeName === RouteName.CIRCLE) {
-        label = <Text style={{ color }}>Circle</Text>;
-    } else if (routeName === RouteName.SQUARE) {
-        label = <Text style={{ color }}>Square</Text>;
-    } else if (routeName === RouteName.TRIANGLE) {
-        label = <Text style={{ color }}>Triangle</Text>;
-    } else if (routeName === RouteName.ALL_SHAPES) {
-        label = <Text style={{ color }}>Shapes</Text>;
-    }
-    return label;
-};
+// const renderTabBarLabel = (routeName: string, color: string) => {
+//     let label;
+//     if (routeName === RouteName.CIRCLE) {
+//         label = <Text style={{ color }}>Circle</Text>;
+//     } else if (routeName === RouteName.SQUARE) {
+//         label = <Text style={{ color }}>Square</Text>;
+//     } else if (routeName === RouteName.TRIANGLE) {
+//         label = <Text style={{ color }}>Triangle</Text>;
+//     } else if (routeName === RouteName.ALL_SHAPES) {
+//         label = <Text style={{ color }}>Shapes</Text>;
+//     }
+//     return label;
+// };
 
 const StyleTabBarOption = {
     activeTintColor: 'white',
@@ -55,13 +57,13 @@ const RootNavigation = () => {
             <Tab.Navigator
                 screenOptions={({ route }) => ({
                     tabBarIcon: ({ color }) => renderTabBarIcon(route.name, color),
-                    tabBarLabel: ({ color }) => renderTabBarLabel(route.name, color),
+                    // tabBarLabel: ({ color }) => renderTabBarLabel(route.name, color),
                 })}
                 tabBarOptions={StyleTabBarOption}>
-                <Tab.Screen name={RouteName.CIRCLE} component={Circle} />
-                <Tab.Screen name={RouteName.SQUARE} component={Square} />
-                <Tab.Screen name={RouteName.TRIANGLE} component={Circle} />
-                <Tab.Screen name={RouteName.ALL_SHAPES} component={Square} />
+                <Tab.Screen name={RouteName.CIRCLE} component={CircleScreen} />
+                <Tab.Screen name={RouteName.SQUARE} component={SquareScreen} />
+                <Tab.Screen name={RouteName.TRIANGLE} component={TriangleScreen} />
+                <Tab.Screen name={RouteName.ALL_SHAPES} component={AllShapesScreen} />
             </Tab.Navigator>
         </NavigationContainer>
     );
